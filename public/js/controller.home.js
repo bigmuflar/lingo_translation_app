@@ -1,16 +1,23 @@
 angular.module('Lingos')
-  .controller('homeController', homeController);
+  .controller('userController', userController);
 
-homeController.$inject = [];
+userController.$inject = [];
+tranlate.$inject = ['$http'];
 
-function homeController (){
-  var home = this;
-  home.newLingo = {};
-  home.lingo = {};
-  home.lingoList = [];
-  home.greeting = 'Welcome to the LINGO!';
+function userController (){
+  var user = this;
+  user.newLingo = {};
+  user.lingo = {};
+  user.lingoList = [];
+  user.greeting = 'Welcome to the LINGO!';
 
-  home.createLingo = function(){
+  user.createLingo = function(){
 
   }
+}
+
+function translate($http){
+  var tCtrl = this;
+  tCtrl.greeting(console.log('Translate is working!'));
+  $http.post
 }

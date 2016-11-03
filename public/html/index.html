@@ -7,15 +7,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="/js/module.lingos.js"></script>
-        <script src="/js/controller.home.js"></script>
+        <script src="/js/controller.user.js"></script>
         <script src="/js/factory.lingos.js"></script>
 
     </head>
-    <body ng-controller="homeController as home" class="container">
-            <h1>{{home.greeting}}</h1>
+    <body ng-controller="userController as user" class="container">
+            <h1>{{user.greeting}}</h1>
 
-            <form ng-submit="home.createLingo()">
-                <input class="form-control" ng-model="home.newLingo.oword" placeholder="Enter a word to translate">
+            <form ng-submit="user.createLingo()">
+                <input class="form-control" ng-model="user.newLingo.oword" placeholder="Enter a word to translate">
 
                 <div class="btn-group">
                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Language
@@ -28,7 +28,7 @@
                  </div>
 
 
-                <input class="form-control" ng-model="home.newLingo.tlanguage" placeholder="You Translation">
+                <input class="form-control" ng-model="user.newLingo.tlanguage" placeholder="You Translation">
 
                 <input type="submit">
             </form>
