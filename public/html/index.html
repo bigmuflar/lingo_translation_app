@@ -14,7 +14,7 @@
     <body ng-controller="userController as user" class="container">
             <h1>{{user.greeting}}</h1>
 
-            <form ng-submit="user.createLingo()">
+            <form ng-submit="user.translate()">
                 <input class="form-control" ng-model="user.newLingo.oword" placeholder="Enter a word to translate">
 
                 <div class="btn-group">

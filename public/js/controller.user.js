@@ -1,10 +1,9 @@
 angular.module('Lingos')
   .controller('userController', userController);
 
-userController.$inject = [];
-tranlate.$inject = ['$http'];
+userController.$inject = ['$http'];
 
-function userController (){
+function userController ($http){
   var user = this;
   user.newLingo = {};
   user.lingo = {};
@@ -14,10 +13,8 @@ function userController (){
   user.createLingo = function(){
 
   }
-}
-
-function translate($http){
-  var tCtrl = this;
-  tCtrl.greeting(console.log('Translate is working!'));
-  $http.post
+  user.translate = function ($http){
+    var tCtrl = this;
+    tCtrl.greeting(console.log('Translate is working!'));
+  }
 }
