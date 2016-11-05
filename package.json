@@ -4,8 +4,10 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "@google-cloud/translate": "^0.4.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "google-translate": "^1.0.6",
     "mongoose": "^4.6.5",
     "morgan": "^1.7.0",
     "node": "^0.0.0",

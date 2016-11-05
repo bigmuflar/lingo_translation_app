@@ -1,13 +1,34 @@
 var Lingo = require('../models/lingoModel');
+var request = require('request');
 
 function create (req, res){
-  var newDoc = new Lingo(req.body);
+  var oword = req.body.oword;
+  console.log('getting to translate ', oword);
+  var translatedWord;
+  var gtEndpoint = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCLGUGn7uSe2i1oeNaxH9Mur6TM0uJ1jh8';
+  var gtSource = "en"
+  var gtTarget = "es"
+  request(`${gtEndpoint}&q=${oword}&source=${gtSource}&target=${gtTarget}`, (err, response, body) => {
 
-  newDoc.save((err, doc) =>{
-    if(err){
-      return res.send(err);
-    }
-    res.send(doc);
+      if (err) {
+          console.log("The Error", err)
+      }
+      translatedWord = JSON.parse(response.body).data.translations[0].translatedText
+          //console.log("Translated Word in translateWord function: ", translatedWord)
+      //return translatedWord;
+
+      var newDoc = new Lingo({
+        oword: oword,
+        tword: translatedWord
+      });
+
+      newDoc.save((err, doc) =>{
+        if(err){
+          res.send(err);
+        }else {
+          res.send(doc);
+        }
+      });
   });
 }
 
@@ -23,7 +44,7 @@ function get (req, res) {
                 return res.send(err);
             }
             if(!document){
-                return res.send('No one with that id')
+                return res.send('Word not in database')
             }
             res.send(document);
         });

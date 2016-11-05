@@ -14,21 +14,15 @@
     <body ng-controller="userController as user" class="container">
             <h1>{{user.greeting}}</h1>
 
-            <form ng-submit="user.translate()">
+            <form ng-submit="user.createLingo()">
                 <input class="form-control" ng-model="user.newLingo.oword" placeholder="Enter a word to translate">
 
-                <div class="btn-group">
-                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Language
-                   <span class="caret"></span></button>
-                   <ul class="dropdown-menu">
-                     <li><a href="#">English</a></li>
-                     <li><a href="#">Spanish</a></li>
-                     <li><a href="#">French</a></li>
-                   </ul>
-                 </div>
+                <ul>
+                    <li ng-repeat="user in user.lingoList">
+                        {{user.tword}}
+                    </li>
 
-
-                <input class="form-control" ng-model="user.newLingo.tlanguage" placeholder="You Translation">
+                </ul>
 
                 <input type="submit">
             </form>
