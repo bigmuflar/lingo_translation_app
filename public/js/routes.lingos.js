@@ -1,5 +1,3 @@
-angular.module('Lingos', ['ngRoute']);
-
 angular.module('Lingos')
   .config(myRouter);
 

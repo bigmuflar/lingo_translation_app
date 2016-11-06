@@ -1,0 +1,11 @@
+<form class="container" ng-submit="user.createLingo()">
+  <div class="row">
+      <textarea class="form-control col-xs-5" rows="3" ng-model="user.newLingo.oword" placeholder="Type to translate"></textarea>
+      <ul class="list-unstyled col-xs-7">
+          <li ng-repeat="user in user.lingoList | limitTo : -1">
+              {{user.tword}}
+          </li>
+      </ul>
+      <input class="btn btn-primary" type="submit">
+  </div>
+</form>

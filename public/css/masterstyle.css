@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body {
+  font: 200% "Roboto", sans-serif;
+  color: #d3d3d3; }
+
+.menu ul {
+  padding-top: 13px;
+  float: right;
+  list-style: none; }
+.menu li {
+  margin-right: 20px;
+  margin-left: 20px;
+  float: right; }
+.menu li.logo {
+  float: left; }
+.menu a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none; }
+
+/*# sourceMappingURL=masterstyle.css.map */

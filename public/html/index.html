@@ -3,29 +3,30 @@
     <head>
         <title>Lingo - Language Expert!</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+        <link rel="stylesheet" href="../css/masterstyle.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="/js/module.lingos.js"></script>
-        <script src="/js/controller.user.js"></script>
-        <script src="/js/factory.lingos.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/module.lingos.js"></script>
+        <script src="../js/controller.user.js"></script>
+        <script src="../js/factory.lingos.js"></script>
 
     </head>
-    <body ng-controller="userController as user" class="container">
-            <h1>{{user.greeting}}</h1>
-
-            <form ng-submit="user.createLingo()">
-                <input class="form-control" ng-model="user.newLingo.oword" placeholder="Enter a word to translate">
-
-                <ul>
-                    <li ng-repeat="user in user.lingoList">
-                        {{user.tword}}
-                    </li>
-
-                </ul>
-
-                <input type="submit">
-            </form>
-
+    <body ng-controller="userController as user">
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="menu row">
+            <ul class="col-xs-12">
+              <li class="logo col-xs-2"><a ng-href="#/">Lingo</a></span>
+              <li class="menu-item"><a ng-href="#/template">Translate</a></li>
+              <li class="menu-item"><a ng-href="#/quiz">Quiz</a></li>
+              <li class="menu-item"><a ng-href="#/progress">Progress</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <ng-view>
+      </ng-view>
     </body>
 </html>
